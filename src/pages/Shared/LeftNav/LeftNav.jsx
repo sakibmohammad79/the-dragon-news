@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import LeftNavInsightsNews from '../../News/LeftNavInsightsNews/LeftNavInsightsNews';
 
 const LeftNav = () => {
     const [catagories, setCatagories] = useState([]);
@@ -19,10 +20,11 @@ const LeftNav = () => {
                 catagories.map((catagorie) => <p
                 kay={catagorie.id}
                 >
-                    <Link to={`/catagorie/${catagorie.id}`} className='text-decoration-none text-black'>{catagorie.name}</Link>
+                    <Link to={`/catagory/${catagorie.id}`} className='text-decoration-none text-black'>{catagorie.name}</Link>
                 </p>)
             }
             </div>
+            <LeftNavInsightsNews></LeftNavInsightsNews>
         </div>
     );
 };
