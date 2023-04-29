@@ -5,11 +5,7 @@ import { Button, Container } from "react-bootstrap";
 import Marquee from "react-fast-marquee";
 
 
-
-
-
 const Header = () => {
-  
   return (
     <Container>
       <div className="text-center">

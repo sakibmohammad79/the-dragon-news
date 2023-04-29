@@ -7,7 +7,13 @@ import { AuthContext } from '../../../Providers/AuthProvider';
 
 
 const NavigationBar = () => {
-    const {user} = useContext(AuthContext)
+    const {user, logOut} = useContext(AuthContext)
+
+    const handleLogOut = () =>{
+      logOut()
+      .then(result => console.log(result))
+      .catch(error => console.log(error));
+    }
     return (
         <Container>
             <Navbar className="mt-3" collapseOnSelect expand="lg" bg="light" variant="light">
@@ -25,7 +31,7 @@ const NavigationBar = () => {
               }
               {
                 user ? 
-                <Button variant="dark">LogOut</Button>:
+                <Button onClick={handleLogOut} variant="dark">LogOut</Button>:
                 <Link to='/login'><Button variant="dark">LogIn</Button></Link>
               }
             </Nav>
